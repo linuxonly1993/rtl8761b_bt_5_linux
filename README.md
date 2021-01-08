@@ -16,7 +16,8 @@ These files are also in this repository under ```firmware``` directory.
 
 Download these files and put them under directory ```/lib/firmware/rtl_bt/```
 
-Check the SHA256sum of these files
+Check the SHA256sum of these files:
+
 ```sha256sum rtl8761b_config.bin rtl8761b_fw.bin```
 
 ```
