@@ -17,14 +17,16 @@ These files are also in this repository under ```firmware``` directory.
 Download these files and put them under directory ```/lib/firmware/rtl_bt/```
 
 Check the SHA256sum of these files
-```sha256sum /lib/firmware/rtl_bt/rtl8761b*
-aa86a092ee58e96256331d5c28c199ceaadec434460e98e7dea20e411e1aa570  /lib/firmware/rtl_bt/rtl8761b_config.bin
-0b59a1f2422c006837c4b5e46b59d49bfdbca1defb958adbbc0d57ebdc19cc82  /lib/firmware/rtl_bt/rtl8761b_fw.bin
+```sha256sum rtl8761b_config.bin rtl8761b_fw.bin```
+
+```
+aa86a092ee58e96256331d5c28c199ceaadec434460e98e7dea20e411e1aa570  rtl8761b_config.bin
+0b59a1f2422c006837c4b5e46b59d49bfdbca1defb958adbbc0d57ebdc19cc82  rtl8761b_fw.bin
 ```
 | SHA256 sum | Filename |
 | ---------- | -------- |
-| rtl8761b_fw.bin | 0b59a1f2422c006837c4b5e46b59d49bfdbca1defb958adbbc0d57ebdc19cc82 |
-| rtl8761b_config.bin | aa86a092ee58e96256331d5c28c199ceaadec434460e98e7dea20e411e1aa570 |
+| ```rtl8761b_fw.bin``` | ```0b59a1f2422c006837c4b5e46b59d49bfdbca1defb958adbbc0d57ebdc19cc82``` |
+| ```rtl8761b_config.bin``` | ```aa86a092ee58e96256331d5c28c199ceaadec434460e98e7dea20e411e1aa570``` |
 
 ### Problem faced
 When using 'hciconfig hci0 up', I got the following error:
@@ -38,7 +40,7 @@ When running ```btmon``` WHILE running ```hciconfig hci0 up```, I saw an error t
 Found this commit in [bluetooth-next.git dated 2020-11-25](https://git.kernel.org/pub/scm/linux/kernel/git/bluetooth/bluetooth-next.git/commit/?id=7c66018139629bfd16fe09b982916cc6c814c8d6)
 
 ### Kernel patch required (as of kernel 5.10.5)
-```
+```c
 diff --git a/net/bluetooth/hci_core.c b/net/bluetooth/hci_core.c
 index 502552d6e9aff..c4aa2cbb92697 100644
 --- a/net/bluetooth/hci_core.c
