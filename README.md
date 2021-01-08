@@ -32,8 +32,26 @@ aa86a092ee58e96256331d5c28c199ceaadec434460e98e7dea20e411e1aa570  rtl8761b_confi
 | ```0b59a1f2422c006837c4b5e46b59d49bfdbca1defb958adbbc0d57ebdc19cc82``` | ```rtl8761b_fw.bin``` |
 | ```aa86a092ee58e96256331d5c28c199ceaadec434460e98e7dea20e411e1aa570``` | ```rtl8761b_config.bin``` |
 
+### dmesg when firmware is loaded correctly
+```
+Jan 07 14:36:35 smaug kernel: usb 3-4.3.2: new full-speed USB device number 9 using xhci_hcd
+Jan 07 14:36:35 smaug kernel: usb 3-4.3.2: New USB device found, idVendor=0bda, idProduct=8771, bcdDevice= 2.00
+Jan 07 14:36:35 smaug kernel: usb 3-4.3.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+Jan 07 14:36:35 smaug kernel: usb 3-4.3.2: Product: Bluetooth Radio
+Jan 07 14:36:35 smaug kernel: usb 3-4.3.2: Manufacturer: Realtek
+Jan 07 14:36:35 smaug kernel: usb 3-4.3.2: SerialNumber: 00E04C239987
+Jan 07 14:36:35 smaug systemd[1]: Starting Load/Save RF Kill Switch Status...
+Jan 07 14:36:35 smaug kernel: Bluetooth: hci0: RTL: examining hci_ver=0a hci_rev=000b lmp_ver=0a lmp_subver=8761
+Jan 07 14:36:35 smaug kernel: Bluetooth: hci0: RTL: rom_version status=0 version=1
+Jan 07 14:36:35 smaug kernel: Bluetooth: hci0: RTL: loading rtl_bt/rtl8761b_fw.bin
+Jan 07 14:36:35 smaug kernel: Bluetooth: hci0: RTL: loading rtl_bt/rtl8761b_config.bin
+Jan 07 14:36:35 smaug kernel: Bluetooth: hci0: RTL: cfg_sz 14, total sz 11678
+Jan 07 14:36:35 smaug systemd[1]: Started Load/Save RF Kill Switch Status.
+Jan 07 14:36:35 smaug systemd[1]: Reached target Bluetooth.
+```
+
 ### Problem faced
-When using ```hciconfig hci0 up```, I got the following error:
+After firmware was installed and dmesg showed firmware was loading correctly, when using ```hciconfig hci0 up```, I got the following error:
 
 ```Can't init device hci0: Operation not supported (93)```
 
@@ -63,21 +81,4 @@ This patch is also in this repository under [```patches```](https://github.com/l
 
 I use [kernel_build](https://github.com/sundarnagarajan/kernel_build) to build my kernels.
 
-### dmesg when firmware is loaded correctly
-```
-Jan 07 14:36:35 smaug kernel: usb 3-4.3.2: new full-speed USB device number 9 using xhci_hcd
-Jan 07 14:36:35 smaug kernel: usb 3-4.3.2: New USB device found, idVendor=0bda, idProduct=8771, bcdDevice= 2.00
-Jan 07 14:36:35 smaug kernel: usb 3-4.3.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
-Jan 07 14:36:35 smaug kernel: usb 3-4.3.2: Product: Bluetooth Radio
-Jan 07 14:36:35 smaug kernel: usb 3-4.3.2: Manufacturer: Realtek
-Jan 07 14:36:35 smaug kernel: usb 3-4.3.2: SerialNumber: 00E04C239987
-Jan 07 14:36:35 smaug systemd[1]: Starting Load/Save RF Kill Switch Status...
-Jan 07 14:36:35 smaug kernel: Bluetooth: hci0: RTL: examining hci_ver=0a hci_rev=000b lmp_ver=0a lmp_subver=8761
-Jan 07 14:36:35 smaug kernel: Bluetooth: hci0: RTL: rom_version status=0 version=1
-Jan 07 14:36:35 smaug kernel: Bluetooth: hci0: RTL: loading rtl_bt/rtl8761b_fw.bin
-Jan 07 14:36:35 smaug kernel: Bluetooth: hci0: RTL: loading rtl_bt/rtl8761b_config.bin
-Jan 07 14:36:35 smaug kernel: Bluetooth: hci0: RTL: cfg_sz 14, total sz 11678
-Jan 07 14:36:35 smaug systemd[1]: Started Load/Save RF Kill Switch Status.
-Jan 07 14:36:35 smaug systemd[1]: Reached target Bluetooth.
-```
-      
+
