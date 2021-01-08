@@ -9,8 +9,8 @@ This is the environment that I used for testing:
 You need the following firmware files from this [Android repository](https://github.com/Realtek-OpenSource/android_hardware_realtek/tree/rtk1395/bt/rtkbt/Firmware/BT):
 | Filename | Renamed to |
 | -------- | ---------- |
-| rtl8761b_fw | rtl8761b_fw.bin |
-| rtl8761b_config | rtl8761b_config.bin |
+| ```rtl8761b_config``` | ```rtl8761b_config.bin``` |
+| ```rtl8761b_fw``` | ```rtl8761b_fw.bin``` |
 
 These files are also in this repository under ```firmware``` directory.
 
