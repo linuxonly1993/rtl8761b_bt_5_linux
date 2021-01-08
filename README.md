@@ -12,6 +12,8 @@ You need the following firmware files from this [Android repository](https://git
 | rtl8761b_fw | rtl8761b_fw.bin |
 | rtl8761b_config | rtl8761b_config.bin |
 
+These files are also in this repository under ```firmware``` directory.
+
 Download these files and put them under directory ```/lib/firmware/rtl_bt/```
 
 Check the SHA256sum of these files
@@ -35,7 +37,7 @@ When running ```btmon``` WHILE running ```hciconfig hci0 up```, I saw an error t
 
 Found this commit in [bluetooth-next.git dated 2020-11-25](https://git.kernel.org/pub/scm/linux/kernel/git/bluetooth/bluetooth-next.git/commit/?id=7c66018139629bfd16fe09b982916cc6c814c8d6)
 
-### Kernel patch requried (as of kernel 5.10.5)
+### Kernel patch required (as of kernel 5.10.5)
 ```
 diff --git a/net/bluetooth/hci_core.c b/net/bluetooth/hci_core.c
 index 502552d6e9aff..c4aa2cbb92697 100644
@@ -51,6 +53,7 @@ index 502552d6e9aff..c4aa2cbb92697 100644
  
  			/* Set RPA timeout */
 ```
+This patch is also in this repository under ```patches``` directory.
 
 I use [kernel_build](https://github.com/sundarnagarajan/kernel_build) to build my kernels.
 
