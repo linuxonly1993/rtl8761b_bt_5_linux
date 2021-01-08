@@ -30,7 +30,7 @@ aa86a092ee58e96256331d5c28c199ceaadec434460e98e7dea20e411e1aa570  rtl8761b_confi
 | ```rtl8761b_config.bin``` | ```aa86a092ee58e96256331d5c28c199ceaadec434460e98e7dea20e411e1aa570``` |
 
 ### Problem faced
-When using 'hciconfig hci0 up', I got the following error:
+When using ```hciconfig hci0 up```, I got the following error:
 
 ```Can't init device hci0: Operation not supported (93)```
 
