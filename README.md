@@ -12,7 +12,10 @@ You need the following firmware files from this [Android repository](https://git
 | ```rtl8761b_config``` | ```rtl8761b_config.bin``` |
 | ```rtl8761b_fw``` | ```rtl8761b_fw.bin``` |
 
-These files are also in this repository under ```firmware``` directory.
+As of Jan-07-2020, these files are not yet available in [linux-firmware git repository](https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/).
+
+
+These files are also in this repository under [```firmware```](https://github.com/linuxonly1993/rtl8761b_bt_5_linux/tree/main/firmware) directory.
 
 Download these files and put them under directory ```/lib/firmware/rtl_bt/```
 
@@ -56,7 +59,7 @@ index 502552d6e9aff..c4aa2cbb92697 100644
  
  			/* Set RPA timeout */
 ```
-This patch is also in this repository under ```patches``` directory.
+This patch is also in this repository under [```patches```](https://github.com/linuxonly1993/rtl8761b_bt_5_linux/tree/main/patches) directory.
 
 I use [kernel_build](https://github.com/sundarnagarajan/kernel_build) to build my kernels.
 
