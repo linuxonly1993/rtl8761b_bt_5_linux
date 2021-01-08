@@ -52,6 +52,8 @@ index 502552d6e9aff..c4aa2cbb92697 100644
  			/* Set RPA timeout */
 ```
 
+I use [kernel_build](https://github.com/sundarnagarajan/kernel_build) to build my kernels.
+
 ### dmesg when firmware is loaded correctly
 ```
 Jan 07 14:36:35 smaug kernel: usb 3-4.3.2: new full-speed USB device number 9 using xhci_hcd
