@@ -1,7 +1,7 @@
 ## Using Bluetooth 5.0 USB Dongle with RTL8761B chipset on Linux kernel 5.10
 
 ### Environment
-This is the environment where I have tested:
+This is the environment that I used for testing:
 - Linux kernel 5.10.5 (stock kernel from kernel.org)
 - Ubuntu 18.04.5 (Bionic Beaver)
 
